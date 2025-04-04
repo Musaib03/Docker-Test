@@ -21,13 +21,16 @@ FROM nginx:latest
 COPY index.html /usr/share/nginx/html/index.html
 
 EXPOSE 80
+```
 
-##Make sure you are in your project directory
-C:\Users\UserName\Desktop\project-folder
+## Make sure You are in correct directory
+C:\Users\Usename\Desktop\project-folder
+
+## Make sure you Docker desktop is running
 
 ## How to Build and Run the Container
 
-## 1. Build the Docker Image
+### 1. Build the Docker Image
 docker build -t my-html-page .
 
 ### 2. Run the Docker Container
@@ -48,11 +51,18 @@ docker stop <container_id>
 docker rm <container_id>
 
 ## Rebuilding After Changes
+If you modify `index.html`, you need to rebuild and restart:
+```
 docker build -t my-html-page .
 docker run -d -p 8080:80 my-html-page
+```
 
 ## Additional Notes
+- If the container fails to start, check logs:
+  ```
   docker logs <container_id>
+  ```
+- If you get a permission error, try running Docker with admin privileges.
 
 Enjoy your Dockerized HTML page! 🚀
 
