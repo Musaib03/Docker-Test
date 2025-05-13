@@ -57,6 +57,25 @@ docker build -t my-html-page .
 docker run -d -p 8080:80 my-html-page
 ```
 
+Correct Workflow for Your Dockerfile
+### Build the Image Locally: Since your Dockerfile is designed to create a custom image, you need to build it locally. Run the following command in the directory containing your Dockerfile:
+
+docker build -t my-html-page .
+
+
+### Run the Container Locally: After building the image, you can run it using:
+
+docker run -d -p 80:80 my-html-page
+
+### Tag the Image: 
+docker tag my-html-page Musaib0/my-html-page:latest
+
+### Push the Image:
+docker push Musaib0/my-html-page:latest
+
+### Pull the Image:
+docker pull Musaib0/my-html-page:latest
+
 ## Additional Notes
 - If the container fails to start, check logs:
   ```
